@@ -1,0 +1,184 @@
+html {
+	position: relative;
+}
+
+body {
+	margin-bottom: 120px;
+}
+
+.jumbotron {
+	margin-top: 30px;
+}
+.jumbotron h1 {
+	font-weight: bolder;
+}
+.jumbotron img {
+	width: 200px;
+	border: 3px solid salmon;
+}
+
+hr {
+	width: 250px;
+	border-top: 4px solid #999;
+}
+
+section {
+	min-height: 600px;
+}
+
+.col-sm-12 h2 {
+	text-shadow: 2px 2px 3px white, 3px 3px 4px rgba(0,0,0,0.5)
+}
+
+.col-sm-4 .thumbnail span {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 0px;
+	height: 235px;
+	color: #333;
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #ddd;
+	text-align: center;
+	line-height:  100px;
+	background-color: rgba(200,200,200,.5);
+	padding-top: 60px;
+	opacity: 0;
+	transform: scale(0);
+	transition: 0.5s;
+}
+
+.col-sm-4 a:hover span {
+	opacity: 1;
+	width: 350px;
+	transform: scale(1);
+}
+
+.portfolio {
+	background-color: #eee;
+}
+
+.overlay {
+	position: fixed;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0);
+	z-index: 9999;
+	transition: 0.8s;
+	padding: 80px 0;
+}
+
+.overlay:target {
+	height: auto;
+	width: auto;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.7);
+}
+
+.overlay img {
+	max-height: 100%;
+	box-shadow: 2px 2px 6px rgba(0,0,0,.5)
+}
+
+.overlay:target img {
+	animation: fade 1s;
+}
+
+.overlay:target .next {
+	animation: fade .5s .5s forwards;
+}
+
+.overlay:target .prev {
+	animation: fade .5s .5s forwards;
+}
+
+
+.overlay .close {
+	position: absolute;
+	top: 60px;
+	right: 320px;
+	color: white;
+	background-color: rgba(0,0,0,.4);
+	opacity: 0;
+}
+
+/*Navigasi*/
+
+.next, .prev {
+	width: 90px;
+	height: 90px;
+	background-image: url(../img/next.png);
+	position: absolute;
+	text-indent: -9999px;
+	top: 40%;
+	right: 170px;
+	opacity: 0;
+}
+
+.prev {
+	background-image: url(../img/prev.png);
+	left: 150px;
+}
+
+@keyframes fade{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/*animasi img overlay*/
+@keyframes zoomfade {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.overlay:target .close {
+	animation: slidefade .5s .5s forwards;
+}
+
+@keyframes slidefade {
+	0% {
+		opacity: 0;
+		margin-top: 60px;
+	}
+
+	100% {
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+.contact {
+	min-height: 900px;
+}
+
+footer {
+	position: absolute;
+	width: 100%;
+	height: 120px;
+	background-color: #333;
+	padding-top: 30px;
+}
+
+footer p {
+	color: #aaa;
+	font-size: 0.9em;
+}
+
+footer p i {
+	color: salmon;
+}
